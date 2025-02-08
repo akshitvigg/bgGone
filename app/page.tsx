@@ -30,11 +30,12 @@ const Bgremoval = () => {
   const removebg = async () => {
     if (!image) return;
 
-    const apiKey = process.env.NEXT_PUBLIC_RAPIDAPI_KEY;
+    const apiKey = process.env.NEXT_PUBLIC_API;
     if (!apiKey) {
       setError("API key is not configured");
       return;
     }
+    console.log(apiKey);
 
     setLoading(true);
     setError(null);
