@@ -30,12 +30,12 @@ const Bgremoval = () => {
   const removebg = async () => {
     if (!image) return;
 
-    const apiKey = process.env.NEXT_PUBLIC_API;
-    if (!apiKey) {
-      setError("API key is not configured");
-      return;
-    }
-    console.log(apiKey);
+    // const apiKey = process.env.NEXT_PUBLIC_API;
+    // if (!apiKey) {
+    //   setError("API key is not configured");
+    //   return;
+    // }
+    // console.log(apiKey);
 
     setLoading(true);
     setError(null);
@@ -48,7 +48,7 @@ const Bgremoval = () => {
       const response = await fetch("https://api.remove.bg/v1.0/removebg", {
         method: "POST",
         headers: {
-          "X-Api-Key": apiKey,
+          "X-Api-Key": "RkmG8MqycfbykwQ4v5KjwqXx",
         } as HeadersInit,
         body: formData,
       });
