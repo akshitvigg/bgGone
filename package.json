@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@tabler/icons-react": "^3.30.0",
+    "@types/aos": "^3.0.7",
     "@vercel/analytics": "^1.4.1",
+    "aos": "^2.3.4",
     "axios": "^1.7.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

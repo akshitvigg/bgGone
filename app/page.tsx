@@ -2,7 +2,9 @@
 import { AnimatedShinyTextDemo } from "@/components/fs";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { IconBrandGithub, IconBrandX } from "@tabler/icons-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import "aos/dist/aos.css";
+import Aos from "aos";
 
 interface ButtonProps {
   onClick?: () => void;
@@ -15,6 +17,13 @@ const Bgremoval = () => {
   const [output, setOutput] = useState<string | undefined>();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    Aos.init({
+      duration: 700,
+      once: true,
+    });
+  });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -83,8 +92,8 @@ const Bgremoval = () => {
   return (
     <div className="relative w-full min-h-screen">
       <div className="absolute inset-0 bg-black [background-size:20px_20px] [background-image:radial-gradient(rgba(255,255,255,0.1)_1px,transparent_3px)]" />
-      <div className="relative z-10 p-6">
-        <div className="gap-2 flex justify-end">
+      <div data-aos="zoom-in" className="relative z-10 p-6">
+        <div data-aos="zoom-out" className="gap-2 flex justify-end">
           <a
             href="https://github.com/akshitvigg/bg-remove"
             target="_blank"
